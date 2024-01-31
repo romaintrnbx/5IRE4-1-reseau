@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 1,
+        "mail" : "admin@admin.com",
+        "password" : "$2a$12$5n24YRkOX.AuoySD7sk8KuXKR8Ms.8/gZC2FPhnZCIwTi5H2wDNdO",
+        "role" : "admin",
+        "secret" : "Je sais où se situe la chouette d'or !"
+    },
+    {
+        "id" : 2,
+        "mail" : "user1@gmail.com",
+        "password" : "$2a$12$uWrjFS27pYZxn798Nijx0uX8wjZsS7g9h9lZVgXLQF4B8OOK10aXq",
+        "role" : "user",
+        "secret" : "Si tu vois un oiseau blanc sur un lac, c'est un signe !"
+    },
+    {
+        "id" : 3,
+        "mail" : "user2@gmail.com",
+        "password" : "$2a$12$XpY4UTp4NPrU9HrwT7HPp./WGyeNAAvpSEyc8brPxUixDEog7zxIi",
+        "role" : "user",
+        "secret" : "Le caractère autotélique et systémique du capitalisme ne doit pas être absolutisé !"
+    }
+]
