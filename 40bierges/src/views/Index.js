@@ -22,7 +22,8 @@ class Index extends React.Component {
       isLoading: true,
       url: "http://localhost:3001"
     };
-    this.toggleSecret = this.toggleSecret.bind(this)
+      this.toggleSecret = this.toggleSecret.bind(this)
+      this.handleLogout = this.handleLogout.bind(this);
   };
 
   componentDidMount() {
@@ -53,7 +54,12 @@ class Index extends React.Component {
     }).catch(error => {
       console.log(error)
     });
-  }
+    }
+
+    handleLogout() {
+        tools.eraseCookie("Token");
+        this.setState({ redirected: true });
+    }
 
   promisedSetState = (newState) => new Promise(resolve => this.setState(newState, resolve));
 
@@ -66,10 +72,12 @@ class Index extends React.Component {
         <div>
           Ravi de te voir {this.state.mail},
           <ButtonUser handleClick={this.toggleSecret} />
-          {this.state.showSecret ? <div>{this.state.secret}</div> : <div>***************</div>}
+                {this.state.showSecret ? <div>{this.state.secret}</div> : <div>***************</div>}
+
+                <button onClick={this.handleLogout}>Déconnexion</button> {/* Bouton de déconnexion */}
         </div>
       </>
-    )
+    )   
   }
 }
 
