@@ -36,6 +36,8 @@ ReactDOM.render(
       <Route path="/index" render={props => <Index {...props} />} />
       <Redirect to="/index" />
 
+      
+
     </Switch>
   </BrowserRouter>
   ,
