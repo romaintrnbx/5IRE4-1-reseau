@@ -8,7 +8,8 @@
     "start": "node index.js",
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build", 
-    "dev": "nodemon --exec npm start"
+    "dev": "nodemon --exec npm start",
+    "vercel-build": "echo hello-world"
   },
   "author": "Stiers Nathan",
   "license": "ISC",
