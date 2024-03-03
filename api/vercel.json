@@ -1,1 +1,20 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
+{
+   "version": 2,
+ 
+   "builds": [{
+     "src": "./index.js",
+     "use": "@vercel/node"
+   }],
+ 
+   "routes": [{
+     "src" : "/(.*)",
+     "dest" : "/",
+     "methods": ["GET", "POST", "OPTIONS"],
+     "headers": {
+       "Access-Control-Allow-Origin" : "",
+       "Access-Control-Allow-Headers" : "X-Requested-With,content-type",
+       "Access-Control-Allow-Credentials" : "true"
+     }
+   }]
+ }
+ 
