@@ -2,9 +2,10 @@
     {
         "id" : 1,
         "mail" : "admin@admin.com",
-        "password" : "$2a$12$5n24YRkOX.AuoySD7sk8KuXKR8Ms.8/gZC2FPhnZCIwTi5H2wDNdO",
+        "password" : "admin",
         "role" : "admin",
-        "secret" : "Je sais où se situe la chouette d'or !"
+        "secret" : "Je sais où se situe la chouette d'or !",
+        "save_pwd": "$2a$12$5n24YRkOX.AuoySD7sk8KuXKR8Ms.8/gZC2FPhnZCIwTi5H2wDNdO"
     },
     {
         "id" : 2,
