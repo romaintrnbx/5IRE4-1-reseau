@@ -9,7 +9,7 @@ import Index from "./views/Index.js"
 import Admin from './views/admin/admin'
 import Login from './views/login/login'
 import Blog from './views/blog/blog'
-import Logs from './views/logs'
+import Logs from './views/logs/logs'
 
 ReactDOM.render(
 

@@ -17,7 +17,7 @@ class Logs extends React.Component {
       logs: [],
       token: "",
       isLoading: true,
-      url: "http://localhost:3001"
+      url: tools.API_URL
     };
   };
 

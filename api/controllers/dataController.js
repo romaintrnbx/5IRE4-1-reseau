@@ -11,7 +11,7 @@ let blogMessages = [];
 const log = ({ status, action, message, payload, ip }) => {
     const date =  new Date();
     date.setHours(date.getHours() + 1);
-    fs.writeFileSync('./logs.json', JSON.stringify([...logs, { message, action, payload, date, ip }], null, 2))
+    fs.writeFileSync('./logs.json', JSON.stringify([...logs, { status, message, action, payload, date, ip }], null, 2))
 }
 
 exports.connectUser = (req, res) => {
@@ -86,4 +86,9 @@ exports.createBlogmessage = (req, res) => {
         blogMessages.push(body.message)
         res.status(200).send("Message Added");
     }
+}
+
+exports.logoutUser = (req, res) => {
+    res.clearCookie('token');
+    res.json({ message: 'Déconnexion réussie' });
 }
