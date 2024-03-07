@@ -14,6 +14,10 @@ exports.readCookie = (cname) => {
     return undefined;
 }
 
+exports.eraseCookie = (name) => {
+    document.cookie = name + '=; Max-Age=-99999999;';
+}
+
 exports.checkIfConnected = () => {
     let token = this.readCookie("Token")
     if (token !== undefined) {
@@ -21,3 +25,4 @@ exports.checkIfConnected = () => {
     }
     return false;
 }
+
