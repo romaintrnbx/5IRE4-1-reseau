@@ -20,7 +20,7 @@ class Index extends React.Component {
       secret: "",
       isAdmin: false,
       isLoading: true,
-      url: "https://api-reseau.vercel.app"
+      url: "https://5-ire-4-1-reseau.vercel.app"
     };
       this.toggleSecret = this.toggleSecret.bind(this)
       this.handleLogout = this.handleLogout.bind(this);

@@ -18,7 +18,7 @@ class Admin extends React.Component {
             token: "",
             userList: "",
             isLoading: true,
-            url: "https://api-reseau.vercel.app"
+            url: "https://5-ire-4-1-reseau.vercel.app"
         };
         this.toggleSecret = this.toggleSecret.bind(this)
     };
