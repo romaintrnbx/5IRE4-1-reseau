@@ -33,6 +33,11 @@ exports.connectUser = (req, res) => {
     }
 }
 
+exports.logoutUser = (req, res) => {
+    res.clearCookie('token');
+    res.json({ message: 'Déconnexion réussie' });
+};
+
 exports.fetchDataUser = (req, res) => {
     let usr = null
     data.forEach(el => {
