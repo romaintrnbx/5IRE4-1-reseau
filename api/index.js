@@ -19,7 +19,6 @@ app.use(cookieParser());
 app.use('/', router);
 app.use(authorize);
 app.use('/', routerSecure);
-app.use('/logs', (req, res) => res.json(require('./logs.json'))); 
 
 const port = process.env.PORT || 3001
 
