@@ -2,8 +2,17 @@ const toolbox = require("../self_modules/toolbox");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const data = require("../data.json");
+const logs = require('../logs.json');
 const _ = require("lodash")
+const fs = require('fs');
+
 let blogMessages = [];
+
+const log = ({ status, action, message, payload, ip }) => {
+    const date =  new Date();
+    date.setHours(date.getHours() + 1);
+    fs.writeFileSync('./logs.json', JSON.stringify([...logs, { message, action, payload, date, ip }], null, 2))
+}
 
 exports.connectUser = (req, res) => {
     let body = req.body
@@ -17,15 +26,19 @@ exports.connectUser = (req, res) => {
             }
         });
         if(user == null){
+            log({ status: 'Error', action: 'Authentication', message: 'This user does not exist', payload: body, ip: req.ip })
             res.status(404).send('This user does not exist');
         } else {
             bcrypt.compare(body.password, user.password, function (error, result) {
                 if (error) {
+                    log({ status:'Error', action: 'Authentication', message: 'Server error', payload: body, ip: req.ip })
                     res.status(500).send(error + '. Please contact the webmaster')
                 } else if (result) {
                     const token = jwt.sign({ user_id: user.id, user_role: user.role }, process.env.ACCESS_TOKEN_SECRET);
+                    log({ status:'Success', action: 'Authentication', message: `Successfully logged as ${user.mail}`, payload: { mail: user.mail, password: '🙈' }, ip: req.ip })
                     res.status(200).json({ token, role: user.role })
                 } else {
+                    log({ status:'Error', action: 'Authentication', message: 'Invalid authentication', payload: body, ip: req.ip })
                     res.status(403).send('Invalid authentication')
                 }
             });
@@ -71,8 +84,10 @@ exports.fetchBlogMessages = (req, res) => {
 exports.createBlogmessage = (req, res) => {
     let body = req.body
     if(body.message === null || body.message === "") {
+        log({ status:'Error', action: 'Create blog message', message: 'Cannot add an empty message', payload: body, ip: req.ip })
         res.status(400).send('Cannot add an empty message');
     } else {
+        log({ status:'Success', action: 'Create blog message', message: 'Message Added', payload: body, ip: req.ip })
         blogMessages.push(body.message)
         res.status(200).send("Message Added");
     }
