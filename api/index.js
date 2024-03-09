@@ -24,5 +24,5 @@ app.use('/logs', (req, res) => res.json(require('./logs.json')));
 const port = process.env.PORT || 3001
 
 app.listen(port, () => {
-    console.info(`[SERVER] Listening on http://localhost:${port}`); 
+    console.info(`[SERVER] Listening on https://5-ire-4-1-reseau.vercel.app:${port}`); 
 })
