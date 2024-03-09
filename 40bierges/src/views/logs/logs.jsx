@@ -17,7 +17,7 @@ class Logs extends React.Component {
       logs: [],
       token: "",
       isLoading: true,
-      url: "https://5-ire-4-1-reseau.vercel.app"
+      url: tools.API_URL
     };
   };
 
