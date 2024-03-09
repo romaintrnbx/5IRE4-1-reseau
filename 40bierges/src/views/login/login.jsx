@@ -61,7 +61,7 @@ class Login extends React.Component {
         alert("error " + response.status)
       }
     }).catch(error => {
-      console.log("Erreur de merde")
+      console.log(error)
     });
   }
 
