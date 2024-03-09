@@ -25,10 +25,10 @@ app.use(cookieParser());
 app.use('/', router);
 app.use(authorize);
 app.use('/', routerSecure);
-app.use('/logs', (req, res) => res.json(require('./logs.json'))); 
+//app.use('/logs', (req, res) => res.json(require('./logs.json'))); 
 
 const port = process.env.PORT || 3001
 
-app.listen(port, () => {
-    console.info(`[SERVER] Listening on https://5-ire-4-1-reseau.vercel.app:${port}`); 
-})
+//app.listen(port, () => {
+  //  console.info(`[SERVER] Listening on https://5-ire-4-1-reseau.vercel.app:${port}`); 
+//})
