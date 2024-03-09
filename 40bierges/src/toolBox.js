@@ -26,5 +26,3 @@ exports.checkIfConnected = () => {
     return false;
 }
 
-exports.API_URL = "https://5-ire-4-1-reseau.vercel.app"
-//exports.API_URL = 'http://localhost:3001'
