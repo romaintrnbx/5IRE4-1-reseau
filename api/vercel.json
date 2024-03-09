@@ -12,7 +12,7 @@
     "methods": ["GET", "POST", "OPTIONS"],
     "headers": {
       "Access-Control-Allow-Origin" : "https://react-reseau.vercel.app",
-      "Access-Control-Allow-Headers" : "X-Requested-With, content-type:application/json",
+      "Access-Control-Allow-Headers" : "X-Requested-With,content-type",
       "Access-Control-Allow-Credentials" : "true"
     }
   }]
