@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use('/', router);
 app.use(authorize);
 app.use('/', routerSecure);
-app.use('/logs', (req, res) => res.json(logs)); 
+app.use('/logs', (req, res) => res.json([...logs].reverse())); 
 
 const port = process.env.PORT || 3001
 
