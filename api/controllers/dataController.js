@@ -23,7 +23,7 @@ exports.connectUser = (req, res) => {
                 if (error) {
                     res.status(500).send(error + '. Please contact the webmaster')
                 } else if (result) {
-                    const token = jwt.sign({ user_id: user.id, user_role: user.role }, process.env.ACCESS_TOKEN_SECRET);
+                    const token = jwt.sign({ user_id: user.id, user_role: user.role }, 'xxxx');
                     res.status(200).json({ token, role: user.role })
                 } else {
                     res.status(403).send('Invalid authentication')
