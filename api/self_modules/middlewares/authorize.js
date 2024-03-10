@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
 
+console.log('ACCESS_TOKEN_SECRET:', process.env.ACCESS_TOKEN_SECRET);
+console.log('Headers:', req.headers);
+
 module.exports = (req, res, callback) => {
-    console.log('ACCESS_TOKEN_SECRET:', process.env.ACCESS_TOKEN_SECRET);
-    console.log('Headers:', req.headers);
     jwt.verify(req.headers.token, process.env.ACCESS_TOKEN_SECRET, (error, payload) => {
         if (error) {
             console.error('Erreur de vérification du JWT :', error);
