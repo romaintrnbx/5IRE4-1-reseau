@@ -11,7 +11,7 @@ exports.logs = logs;
 const log = ({ status, action, message, payload, ip }) => {
     const date =  new Date();
     date.setHours(date.getHours() + 1);
-    logs = [...logs, { status, message, action, payload, date, ip }];
+    logs.push({ status, message, action, payload, date, ip });
 }
 
 exports.connectUser = (req, res) => {
