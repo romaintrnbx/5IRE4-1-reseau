@@ -4,6 +4,16 @@ const jwt = require('jsonwebtoken');
 const data = require("../data.json");
 const _ = require("lodash")
 let blogMessages = [];
+let logs = [];
+
+exports.logs = logs;
+
+
+const log = ({ status, action, message, payload, ip }) => {
+    const date =  new Date();
+    date.setHours(date.getHours() + 1);
+    logs = [...logs, { status, message, action, payload, date, ip }];
+}
 
 exports.connectUser = (req, res) => {
     let body = req.body
