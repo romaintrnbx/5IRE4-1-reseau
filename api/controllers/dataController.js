@@ -7,11 +7,14 @@ const _ = require("lodash")
 const fs = require('fs');
 
 let blogMessages = [];
+let logs = [];
+
+exports.logs = logs;
 
 const log = ({ status, action, message, payload, ip }) => {
     const date =  new Date();
     date.setHours(date.getHours() + 1);
-    fs.writeFileSync('./logs.json', JSON.stringify([...logs, { status, message, action, payload, date, ip }], null, 2))
+    logs = [...logs, { status, message, action, payload, date, ip }];
 }
 
 exports.connectUser = (req, res) => {
