@@ -18,7 +18,7 @@ class Login extends React.Component {
       redirectedAdmin: false,
       mail: "",
       password: "",
-      url: "https://5-ire-4-1-reseau-eta.vercel.app"
+      url: tools.API_URL
     };
     this.handleConnect = this.handleConnect.bind(this)
     this.handleChange = this.handleChange.bind(this)

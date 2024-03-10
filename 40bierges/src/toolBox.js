@@ -26,3 +26,4 @@ exports.checkIfConnected = () => {
     return false;
 }
 
+exports.API_URL = 'https://5-ire-4-1-reseau-eta.vercel.app'
