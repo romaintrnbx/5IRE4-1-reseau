@@ -1,8 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-console.log('ACCESS_TOKEN_SECRET:', process.env.ACCESS_TOKEN_SECRET);
-console.log('Headers:', req.headers);
-
 module.exports = (req, res, callback) => {
     jwt.verify(req.headers.token, 'xxxx', (error, payload) => {
         if (error) {
