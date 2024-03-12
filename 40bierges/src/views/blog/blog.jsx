@@ -82,7 +82,7 @@ class Blog extends React.Component {
         return (
             <>
                 <div>
-                    <textarea name="newMessage" value={dangerouslySetInnerHTML={{ this.state.newMessage }}} onChange={this.handleChange}></textarea>
+                    <textarea name="newMessage" value={this.state.newMessage} onChange={this.handleChange}></textarea>
                     <button onClick={this.handleSend}>Poster ce nouveau message</button>
                     {this.state.messages.map((message, index) => {
                         return (
