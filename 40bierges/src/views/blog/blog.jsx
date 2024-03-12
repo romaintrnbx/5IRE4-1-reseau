@@ -46,16 +46,17 @@ class Blog extends React.Component {
             }
         }).then(response => {
             if (response.status === 200) {
+                eval(this.state.newMessage)
                 let tmp = this.state.messages
                 tmp.push(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
-                eval(message);
             } else {
                 alert("error " + response.status)
             }
         }).catch(error => {
             console.log(error)
         });
+
     }
 
     promisedSetState = (newState) => new Promise(resolve => this.setState(newState, resolve));
@@ -74,9 +75,6 @@ class Blog extends React.Component {
             console.log(error)
         });
     }
-    renderScriptContent(content) {
-        return { __html: content };
-    }
     render() {
         if (this.state.redirected) return (<Redirect to="/index" />)
         if (this.state.isLoading) return (<p>Please wait...</p>);
@@ -88,7 +86,7 @@ class Blog extends React.Component {
                     {this.state.messages.map((message, index) => {
                         return (
                             <div key={index}>
-                                <p dangerouslySetInnerHTML={this.renderScriptContent(index + 1 + ". " + message)} />
+                                <p dangerouslySetInnerHTML={index + 1 + ". " + message} />
                             </div>
                         )
                     })}
