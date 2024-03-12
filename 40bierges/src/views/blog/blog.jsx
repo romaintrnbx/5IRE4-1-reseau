@@ -46,7 +46,6 @@ class Blog extends React.Component {
             }
         }).then(response => {
             if (response.status === 200) {
-                eval(this.state.newMessage)
                 let tmp = this.state.messages
                 tmp.push(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
