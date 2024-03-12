@@ -46,6 +46,7 @@ class Blog extends React.Component {
             }
         }).then(response => {
             if (response.status === 200) {
+                dangerouslySetInnerHTML = {{message }}
                 let tmp = this.state.messages
                 tmp.push(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
