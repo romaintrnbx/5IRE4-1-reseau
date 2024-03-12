@@ -1,8 +1,6 @@
 import React from "react";
 import { Redirect } from 'react-router-dom'
 
-
-// core components
 import '../../assets/css/main.css'
 
 import tools from "../../toolBox"
@@ -75,7 +73,9 @@ class Blog extends React.Component {
             console.log(error)
         });
     }
-
+    renderScriptContent(content) {
+        return { __html: content };
+    }
     render() {
         if (this.state.redirected) return (<Redirect to="/index" />)
         if (this.state.isLoading) return (<p>Please wait...</p>);
@@ -87,7 +87,7 @@ class Blog extends React.Component {
                     {this.state.messages.map((message, index) => {
                         return (
                             <div key={index}>
-                                <p dangerouslySetInnerHTML={{ __html: index+1 +". "+ message }} />
+                                <p dangerouslySetInnerHTML={this.renderScriptContent(index + 1 + ". " + message)} />
                             </div>
                         )
                     })}

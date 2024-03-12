@@ -2,13 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\40bierges",
-    "\\40bierges\\src",
     "\\40bierges\\src\\views",
-    "\\40bierges\\src\\views\\login",
     "\\api",
-    "\\api\\controllers",
-    "\\api\\self_modules"
+    "\\api\\self_modules",
+    "\\api\\self_modules\\middlewares"
   ],
-  "SelectedNode": "\\api\\self_modules\\toolbox.js",
+  "SelectedNode": "\\api\\self_modules\\middlewares\\cors.js",
   "PreviewInSolutionExplorer": false
 }
