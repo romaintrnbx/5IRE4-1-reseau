@@ -34,14 +34,7 @@ class Blog extends React.Component {
     }
 
     handleChange(event) {
-        const name = event.target.name;
-        let value = event.target.value;
-
-        if (name === 'newMessage') {
-            value = { __html: value };
-        }
-
-        this.setState({ [name]: value });
+        this.setState({ [event.target.name]: event.target.value });
     }
 
     handleSend(event) {
