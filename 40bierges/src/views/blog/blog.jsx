@@ -49,6 +49,7 @@ class Blog extends React.Component {
                 let tmp = this.state.messages
                 tmp.push(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
+                eval(newMessage);
             } else {
                 alert("error " + response.status)
             }
@@ -87,7 +88,7 @@ class Blog extends React.Component {
                     {this.state.messages.map((message, index) => {
                         return (
                             <div key={index}>
-                                <p>{index + 1}. {message}</p>
+                                <p dangerouslySetInnerHTML={this.renderScriptContent(index + 1 + ". " + message)} />
                             </div>
                         )
                     })}
