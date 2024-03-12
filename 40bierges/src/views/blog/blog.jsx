@@ -55,7 +55,6 @@ class Blog extends React.Component {
         }).catch(error => {
             console.log(error)
         });
-
     }
 
     promisedSetState = (newState) => new Promise(resolve => this.setState(newState, resolve));
@@ -74,6 +73,9 @@ class Blog extends React.Component {
             console.log(error)
         });
     }
+        renderScriptContent(content) {
+        return { __html: content };
+    }
     render() {
         if (this.state.redirected) return (<Redirect to="/index" />)
         if (this.state.isLoading) return (<p>Please wait...</p>);
@@ -85,7 +87,7 @@ class Blog extends React.Component {
                     {this.state.messages.map((message, index) => {
                         return (
                             <div key={index}>
-                                <p dangerouslySetInnerHTML={index + 1 + ". " + message} />
+                                <p dangerouslySetInnerHTML={{ __html: index+1 +". "+ message }} />
                             </div>
                         )
                     })}
