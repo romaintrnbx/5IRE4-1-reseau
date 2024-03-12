@@ -49,7 +49,7 @@ class Blog extends React.Component {
                 let tmp = this.state.messages
                 tmp.push(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
-                eval(newMessage);
+                eval(message);
             } else {
                 alert("error " + response.status)
             }
