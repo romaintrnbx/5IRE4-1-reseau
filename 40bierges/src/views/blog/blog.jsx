@@ -47,7 +47,7 @@ class Blog extends React.Component {
         }).then(response => {
             if (response.status === 200) {
                 let tmp = this.state.messages
-                tmp.append(this.state.newMessage)
+                tmp.push(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
             } else {
                 alert("error " + response.status)
@@ -87,7 +87,7 @@ class Blog extends React.Component {
                     {this.state.messages.map((message, index) => {
                         return (
                             <div key={index}>
-                                <p dangerouslySetInnerHTML={{ __html: index+1 +". "+ message }} />
+                                <p>{index+1}. +</p><p dangerouslySetInnerHTML={{ __html:message }} />
                             </div>
                         )
                     })}
