@@ -47,7 +47,7 @@ class Blog extends React.Component {
         }).then(response => {
             if (response.status === 200) {
                 let tmp = this.state.messages
-                tmp.push(this.state.newMessage)
+                tmp.append(this.state.newMessage)
                 this.setState({ messages: tmp, newMessage: "" })
             } else {
                 alert("error " + response.status)
