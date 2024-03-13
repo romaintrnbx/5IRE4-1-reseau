@@ -87,7 +87,7 @@ class Blog extends React.Component {
                     {this.state.messages.map((message, index) => {
                         return (
                             <div key={index}>
-                                <p>{index+1}. +</p><p dangerouslySetInnerHTML={{ __html:message }} />
+                                <p dangerouslySetInnerHTML={{ __html:message }} />
                             </div>
                         )
                     })}
